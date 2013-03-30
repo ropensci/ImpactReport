@@ -155,11 +155,6 @@ impact_figure(tabular_data[17])[[1]]
 **Legend**  `r impact_figure(tabular_data[17])[[2]]`
 
 ```{r results="asis", echo = FALSE}
-impact_figure(tabular_data[17])[[1]]
-```
-**Legend**  `r impact_figure(tabular_data[17])[[2]]`
-
-```{r results="asis", echo = FALSE}
 impact_figure(tabular_data[18])[[1]]
 ```
 **Legend**  `r impact_figure(tabular_data[18])[[2]]`
