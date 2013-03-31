@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.4)  31 MAR 2013 15:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.4)  31 MAR 2013 15:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -524,11 +524,11 @@ Here is how much of TeX's memory you used:
  12957 multiletter control sequences out of 15000+200000
  18323 words of font info for 39 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 30i,6n,35p,574b,337s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,6n,35p,580b,337s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2012/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 Output written on /Users/karthik/Desktop/impact_report/.texpadtmp/report.pdf (2
- pages, 27037 bytes).
+ pages, 27791 bytes).
 PDF statistics:
  32 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream
