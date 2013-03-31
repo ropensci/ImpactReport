@@ -1,8 +1,15 @@
-suppressPackageStartupMessages(library(rImpactStory))
-# I created this collection via the website
+# First create your collection via the website. Provide your GitHub username.
+# Then copy your ImpactStory report ID and paste it below.
+impact_report_id <- "d4npn7"
+
+# Unfortunately RCurl and RJSONIO have startup messages that can clutter a document
+suppressPackageStartupMessages(suppressWarnings(library(rImpactStory)))
+
 # If your impactstory key is not stored in your .rprofile, add it below with key =
 # metrics <- collection_metrics(collection_id = "d4npn7", key = "YOUR_KEY")
-metrics <- collection_metrics(collection_id = "d4npn7")
+metrics <- collection_metrics(collection_id = impact_report_id)
+created_on <- str_sub(metrics[[4]], 1, 10)
+title <- metrics[[9]]
 # From all the fields returned, I just need the metrics
 data <- metrics[[5]]
 tabular_data <- llply(data, function(x) {
@@ -33,6 +40,21 @@ tabular_data <- llply(data, function(x) {
         bookmarks = bookmarks_data, forks = fork_data))
 })
 
+github_data <- function(foo) {
+    data <- ldply(foo[2:length(foo)])
+    names(data)[1] <- "metric"
+    info <- ldply(foo[1])
+    data$title <- info[1, ]$title
+    data$url <- info[1, ]$url
+    data$description <- info[1, ]$description
+    data$year <- info[1, ]$year
+    return(data)
+}
+
+# df <- ldply(tabular_data, github_data, .progress = 'text')
+
+# ggplot(df, aes(metric, count, fill = metric)) + geom_bar(stat = "identity") + facet_wrap( ~ title) + scale_x_discrete(labels=c("B", "F", "S", "T"))
+
 # Function generates a barplot for each repo along with a legend.
 impact_figure <- function(x) {
     df <- x[[1]][2:5]
@@ -51,9 +73,7 @@ impact_figure <- function(x) {
     forks <- df2[which(df2$.id == "forks"), ]$count
     forks_lower <- df2[which(df2$.id == "forks"), ]$CI95_lower
     # Format the legend
-    legend <- sprintf("%s (%s) released in %s was discussed by the public %s times. This item has %d stars on GitHub. That's better than %s percent of items added to GitHub in the same year. The item has %d forks. This is better than %2d percent of GitHub repositories of the same age",
-        title, description, year, tweets, stars, stars_lower, forks,
-        forks_lower)
+
     # then the title
     ptitle <- sprintf("%s, %s", title, description)
     # add my ggplot theme
@@ -64,9 +84,24 @@ impact_figure <- function(x) {
     plot1 <- ggplot(df2, aes(.id, count, fill = .id)) + geom_bar(stat = "identity",
         width = 0.5) + geom_bar(stat = "identity", color = "black", show_guide=FALSE) + scale_fill_brewer("Metrics", palette = 9) +
         ggtitle(ptitle) + xlab("Metrics") + ylab("Count")
-    return(list(plot1, legend))
+    return(plot1)
 }
 
-impact_figure(tabular_data[1])
+impact_legend <- function(x) {
+    title <- x[[1]][[1]]$title
+    year <- x[[1]][[1]]$year
+    description <- x[[1]][[1]]$description
+    tweets <- df2[which(df2$.id == "tweets"), ]$count
+    stars <- df2[which(df2$.id == "stars"), ]$count
+    stars_lower <- df2[which(df2$.id == "stars"), ]$CI95_lower
+    forks <- df2[which(df2$.id == "forks"), ]$count
+    forks_lower <- df2[which(df2$.id == "forks"), ]$CI95_lower
+    # Format the legend
+    legend <- sprintf("%s (%s) released in %s was discussed by the public %s times. This item has %d stars on GitHub. That's better than %s percent of items added to GitHub in the same year. The item has %d forks. This is better than %2d percent of GitHub repositories of the same age",
+        title, description, year, tweets, stars, stars_lower, forks,
+        forks_lower)
+    return(legend)
+}
+# impact_figure(tabular_data[1])
 # repeat the same for the others
 
