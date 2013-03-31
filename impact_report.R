@@ -51,57 +51,10 @@ github_data <- function(foo) {
     return(data)
 }
 
-# df <- ldply(tabular_data, github_data, .progress = 'text')
 
-# ggplot(df, aes(metric, count, fill = metric)) + geom_bar(stat = "identity") + facet_wrap( ~ title) + scale_x_discrete(labels=c("B", "F", "S", "T"))
-
-# Function generates a barplot for each repo along with a legend.
-impact_figure <- function(x) {
-    df <- x[[1]][2:5]
-    # Remove empty metrics and squash into a data.frame
-    df2 <- ldply(df, function(x) {
-        if (dim(x)[1] > 0)
-            return(x)
-    })
-    # Pull out some metadata
-    title <- x[[1]][[1]]$title
-    year <- x[[1]][[1]]$year
-    description <- x[[1]][[1]]$description
-    tweets <- df2[which(df2$.id == "tweets"), ]$count
-    stars <- df2[which(df2$.id == "stars"), ]$count
-    stars_lower <- df2[which(df2$.id == "stars"), ]$CI95_lower
-    forks <- df2[which(df2$.id == "forks"), ]$count
-    forks_lower <- df2[which(df2$.id == "forks"), ]$CI95_lower
-    # Format the legend
-
-    # then the title
-    ptitle <- sprintf("%s, %s", title, description)
-    # add my ggplot theme
-    theme_update(panel.background = element_blank(), panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(), panel.border = element_blank(),
-        axis.line = element_line(colour = "black"))
-    # and make the plot
-    plot1 <- ggplot(df2, aes(.id, count, fill = .id)) + geom_bar(stat = "identity",
-        width = 0.5) + geom_bar(stat = "identity", color = "black", show_guide=FALSE) + scale_fill_brewer("Metrics", palette = 9) +
-        ggtitle(ptitle) + xlab("Metrics") + ylab("Count")
-    return(plot1)
+simpleCap <- function(x) {
+  foo  <- paste(toupper(substring(x, 1,1)), substring(x, 2, nchar(x)),
+      sep="", collapse=" ")
+  return(foo)
 }
-
-impact_legend <- function(x) {
-    title <- x[[1]][[1]]$title
-    year <- x[[1]][[1]]$year
-    description <- x[[1]][[1]]$description
-    tweets <- df2[which(df2$.id == "tweets"), ]$count
-    stars <- df2[which(df2$.id == "stars"), ]$count
-    stars_lower <- df2[which(df2$.id == "stars"), ]$CI95_lower
-    forks <- df2[which(df2$.id == "forks"), ]$count
-    forks_lower <- df2[which(df2$.id == "forks"), ]$CI95_lower
-    # Format the legend
-    legend <- sprintf("%s (%s) released in %s was discussed by the public %s times. This item has %d stars on GitHub. That's better than %s percent of items added to GitHub in the same year. The item has %d forks. This is better than %2d percent of GitHub repositories of the same age",
-        title, description, year, tweets, stars, stars_lower, forks,
-        forks_lower)
-    return(legend)
-}
-# impact_figure(tabular_data[1])
-# repeat the same for the others
 

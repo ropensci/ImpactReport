@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.4)  31 MAR 2013 15:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.4)  31 MAR 2013 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -465,73 +465,81 @@ LaTeX Info: Redefining \nameref on input line 71.
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 79.
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 77.
+Package color Info: Redefining color shadecolor on input line 83.
+
+<figure/plots.pdf, id=4, 505.89pt x 505.89pt>
+File: figure/plots.pdf Graphic file (type pdf)
+ <use figure/plots.pdf>
+Package pdftex.def Info: figure/plots.pdf used on input line 85.
+(pdftex.def)             Requested size: 472.03123pt x 472.03983pt.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 94.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 94.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 79.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 94.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 79.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 94.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 79.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 94.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 79.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 94.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
-
-LaTeX Warning: No \author given.
-
-Package color Info: Redefining color shadecolor on input line 84.
-<figure/plots.pdf, id=4, 505.89pt x 505.89pt>
-File: figure/plots.pdf Graphic file (type pdf)
- <use figure/plots.pdf>
-Package pdftex.def Info: figure/plots.pdf used on input line 86.
-(pdftex.def)             Requested size: 472.03123pt x 472.03983pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
  [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
-e/plots.pdf>] [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+e/plots.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
  (/Users/karthik/Desktop/impact_report/.texpadtmp/report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 9746 strings out of 493481
- 139039 string characters out of 3140966
+ 9763 strings out of 493481
+ 139665 string characters out of 3140966
  200443 words of memory out of 3000000
- 12957 multiletter control sequences out of 15000+200000
- 18323 words of font info for 39 fonts, out of 3000000 for 9000
+ 12971 multiletter control sequences out of 15000+200000
+ 17397 words of font info for 38 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 30i,6n,35p,580b,337s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2012/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on /Users/karthik/Desktop/impact_report/.texpadtmp/report.pdf (2
- pages, 27791 bytes).
+ 30i,5n,35p,762b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2012/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texli
+ve/2012/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012
+/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on /Users/karthik/Desktop/impact_report/.texpadtmp/report.pdf (1
+ page, 64834 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
