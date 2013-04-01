@@ -11,7 +11,7 @@ Code + template to generate an ImpactStory summary for your GitHub repositories.
 # The Report
 ![A sample ImpactStory report](impactreport.png)
 
-Here's an impact report for some of the more complete rOpenSci packages. It's easy to see that not many are being bookmarked on Delicious (not surprising). It's also cool to see packages that have wider appeal (like GBIF, figshare, and Mendeley) showing up across different metrics.
+Here's an impact report for some of the more complete rOpenSci packages. It's easy to see that not many are being bookmarked on Delicious (not surprising). It's also cool to see packages that have wider appeal (like GBIF, figshare, and Mendeley) are showing up consistently across different metrics.
 
 ## Contributions
 Please feel free to fork and submit other templates.
