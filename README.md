@@ -3,9 +3,9 @@
 
 Code + template to generate an ImpactStory summary for your GitHub repositories. 
 
-1. Log into ImpactStory and create a report by adding your GitHub username or GitHub organization's username. 
-2. Copy the report ID
-3. Edit the top of [`impact_story.R`](https://github.com/ropensci/ImpactReport/blob/master/impact_report.R) and add the ID
+1. Visit [ImpactStory.org](http://impactstory.org) and create a report by adding your GitHub username or GitHub organization's username. 
+2. Copy the report ID at the end of the URL
+3. Edit the top of [`impact_story.R`](https://github.com/ropensci/ImpactReport/blob/master/impact_report.R) and add this ID
 4. knit [`report.Rnw`](https://github.com/ropensci/ImpactReport/blob/master/report.Rnw) to generate this [pdf](https://github.com/ropensci/ImpactReport/blob/master/report.pdf?raw=true).
 
 # The Report
