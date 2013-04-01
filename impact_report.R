@@ -13,9 +13,10 @@ suppressPackageStartupMessages(library(ggplot2))
 # key = metrics <-collection_metrics(collection_id = impact_report_id, key ='YOUR_KEY')
 metrics <- collection_metrics(collection_id = impact_report_id)
 title <- metrics[[which(names(metrics) == "title")]]
-# From all the fields returned, I just need the metrics
+# From all the fields returned, we just need the data on individual items
 data <- metrics[[which(names(metrics) == "items")]]
 
+# This part extracts metrics from individual repos, and returns them all in a list
 tabular_data <- llply(data, function(x) {
     empty_frame <- data.frame(count = 0, CI95_lower = 0, CI95_upper = 0,
         estimate_lower = 0, estimate_upper = 0)
@@ -61,16 +62,18 @@ tabular_data <- llply(data, function(x) {
     }
     # and finally the metadata
     title <- x$biblio[[which(names(x$biblio) == "title")]]
+    # Description and year fields can be empty. This catches missing ones.
     description <- ifelse(length(which(names(x$biblio) == "description")) >
-        0, x$biblio[[which(names(x$biblio) == "description")]], " ")
+        0, x$biblio[[which(names(x$biblio) == "description")]], "NA")
     year <- ifelse(length(which(names(x$biblio) == "year")) > 0,
-        x$biblio[[which(names(x$biblio) == "year")]], " ")
+        x$biblio[[which(names(x$biblio) == "year")]], "NA")
     results <- data.frame(title = title, URL = x$aliases$url, description = description,
         year = year)
     return(list(results, Stars = stars_data, Tweets = tweet_data,
         Bookmarks = bookmarks_data, Forks = fork_data))
 })
 
+# Squashes individual list items from above into a easily plottable data.frame
 github_data <- function(input_data) {
     data <- ldply(input_data[2:length(input_data)])
     names(data)[1] <- "metric"
