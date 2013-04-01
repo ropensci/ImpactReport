@@ -9,7 +9,6 @@ suppressPackageStartupMessages(library(plyr))
 # If your impactstory key is not stored in your .rprofile, add it below with key =
 # metrics <- collection_metrics(collection_id = impact_report_id, key = 'YOUR_KEY')
 metrics <- collection_metrics(collection_id = impact_report_id)
-created_on <- str_sub(metrics[[4]], 1, 10)
 title <- metrics[[9]]
 # From all the fields returned, I just need the metrics
 data <- metrics[[5]]
@@ -36,7 +35,7 @@ tabular_data <- llply(data, function(x) {
     rownames(fork_data) <- NULL
     # and finally the metadata
     results <- data.frame(title = x$biblio[[6]], URL = x$aliases$url,
-        description = x$biblio[[2]], year = x$biblio[[8]])
+        description = x$biblio[[2]], year = x$biblio[[8]], created = created_on)
     return(list(results, stars = stars_data, tweets = tweet_data,
         bookmarks = bookmarks_data, forks = fork_data))
 })

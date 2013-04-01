@@ -14,7 +14,7 @@
  pdfstartview={XYZ null null 1}}
 \usepackage{breakurl}
 \begin{document}
-
+\pagenumbering{gobble}
 <<setup, include=FALSE, cache=FALSE>>=
 # set global chunk options
 opts_chunk$set(fig.path='figure/', fig.align='center', fig.show='hold')
@@ -32,6 +32,9 @@ df$outline_color <- "0"
 df[df$count>3 && df$estimate_lower>75, ]$outline_color <- "1"
 df[df$count<3 | df$estimate_lower<75, ]$outline_color <- "2"
 df$metric <- sapply(df$metric, simpleCap)
+# Because nothing seems to be bookmarked on Delicious these days,
+# we can also drop that metric like so:
+# df2 <- df[which(df$metric =! "Bookmarks"),]
 @
 
 <<plots, echo = FALSE>>=
@@ -48,5 +51,6 @@ geom_bar(stat = "identity",
     "#528dc6")) + xlab("") + ylab("Raw Counts")
 @
 
-Orange bars indicate significant activity for a given metric. This badge is added only when a metric is above the 75th percentile and exceeds a minimum frequency. These include highly discussed (for tweets), highly cited (for forks), and highly recommended (for stars).  This ImpactStory report was generated using \href{http://ropensci.org}{rOpenSci's} \href{http://ropensci.github.com/rImpactStory/}{rImpactStory package}. The R script and template necessary to reproduce this PDF are available \href{https://github.com/ropensci/ImpactReport}{here}. A more detailed report can be viewed at \url{http://impactstory.org/collection/d4npn7}.
+Orange bars indicate significant activity for a given metric. Bars are only significant when a metric is above the 75\textsuperscript{th} percentile and exceeds a minimum frequency. These include \textbf{highly discussed} (for tweets), \textbf{highly cited} (for forks), and \textbf{highly recommended} (for stars).  \footnote[1]{This \href{http://impactstory.org}{ImpactStory} report was generated using \href{http://ropensci.org}{rOpenSci's} \href{http://ropensci.github.com/rImpactStory/}{rImpactStory package}. The R script and template necessary to reproduce this PDF are available \href{https://github.com/ropensci/ImpactReport}{here}. These metrics were last updated on \Sexpr{date()}.}  A more detailed report can be viewed at \url{http://impactstory.org/collection/d4npn7}.
+
 \end{document}

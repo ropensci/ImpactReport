@@ -25,3 +25,8 @@ ggplot(df, aes(title, count, fill = metric)) + geom_bar(stat = "identity",
     aes(fill = outline_color), show_guide = FALSE, color = "#5d5d5d") +
     facet_wrap(~metric, nrow = 1) + coord_flip() + scale_fill_manual(values = c("#ee701e",
     "#528dc6")) + xlab("") + ylab("Raw Counts")
+
+ggplot(df2, aes(title, count, fill = metric)) + geom_bar(stat = "identity",
+    aes(fill = outline_color), show_guide = FALSE, color = "#5d5d5d") +
+    facet_wrap(~metric, nrow = 3, ncol =1) + scale_fill_manual(values = c("#ee701e",
+    "#528dc6")) + xlab("") + ylab("Raw Counts")
