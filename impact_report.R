@@ -35,7 +35,7 @@ tabular_data <- llply(data, function(x) {
     rownames(fork_data) <- NULL
     # and finally the metadata
     results <- data.frame(title = x$biblio[[6]], URL = x$aliases$url,
-        description = x$biblio[[2]], year = x$biblio[[8]], created = created_on)
+        description = x$biblio[[2]], year = x$biblio[[8]])
     return(list(results, stars = stars_data, tweets = tweet_data,
         bookmarks = bookmarks_data, forks = fork_data))
 })
