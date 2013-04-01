@@ -29,7 +29,6 @@ df <- github_report("d4npn7")
 github_plot(df)
 ```
 
----
 to generate this [pdf](https://github.com/ropensci/ImpactReport/blob/master/report.pdf?raw=true).
 
 # The Report
