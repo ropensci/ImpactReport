@@ -22,6 +22,10 @@ knit the document:
 knitr::knit('report.Rnw')
 system('pdflatex report.tex')
 ```
+
+[resulting pdf](https://github.com/ropensci/ImpactReport/blob/master/report.pdf?raw=true).
+
+
 ## To generate a visualization in R
 
 ```r
@@ -31,7 +35,7 @@ df <- github_report("d4npn7")
 github_plot(df)
 ```
 
-to generate this [pdf](https://github.com/ropensci/ImpactReport/blob/master/report.pdf?raw=true).
+You can save or embed this `ggplot2` object any way you like.
 
 # The Report
 ![A sample ImpactStory report](impactreport.png)
