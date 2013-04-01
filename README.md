@@ -12,7 +12,10 @@ library(devtools)
 install_github("rImpactStory", "ropensci")
 ```
 ## To generate a PDF report
-4. Edit [`report.Rnw`](https://github.#' df <- github_report("d4npn7")
+Edit [`report.Rnw`](https://github.#' df <- github_report("d4npn7")
+
+```r
+df <- github_report("d4npn7")
 #' # To visualize this, then use
 #' github_plot(df)
 ```
