@@ -14,10 +14,11 @@ title <- metrics[[which(names(metrics)=="title")]]
 data <- metrics[[which(names(metrics)=="items")]]
 
 tabular_data <- llply(data, function(x) {
-    bookmarks_data <- data.frame()
-    stars_data <- data.frame()
-    fork_data <- data.frame()
-    tweet_data <- data.frame()
+    empty_frame <- data.frame(count = 0, CI95_lower = 0, CI95_upper = 0, estimate_lower = 0, estimate_upper = 0)
+    bookmarks_data <- empty_frame
+    stars_data <-empty_frame
+    fork_data <-empty_frame
+    tweet_data <-empty_frame
     # stars
     stars_pos <- which(names(x$metrics$`github:stars`$values)=="github")
     if(length(stars_pos) > 0) {
@@ -52,8 +53,12 @@ tabular_data <- llply(data, function(x) {
     rownames(fork_data) <- NULL
     }
     # and finally the metadata
-    results <- data.frame(title = x$biblio[[6]], URL = x$aliases$url,
-        description = x$biblio[[2]], year = x$biblio[[8]])
+
+    title = x$biblio[[which(names(x$biblio)=="title")]]
+    description = ifelse(length(which(names(x$biblio)=="description"))>0, x$biblio[[which(names(x$biblio)=="description")]], " ")
+    year = ifelse(length(which(names(x$biblio)=="year"))>0, x$biblio[[which(names(x$biblio)=="year")]], " ")
+    results <- data.frame(title = title, URL = x$aliases$url,
+        description = description, year = year)
     return(list(results, Stars = stars_data, Tweets = tweet_data,
         Bookmarks = bookmarks_data, Forks = fork_data))
 })
