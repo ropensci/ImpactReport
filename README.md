@@ -11,16 +11,29 @@ Code + template to generate an ImpactStory summary for your GitHub repositories.
 library(devtools)
 install_github("rImpactStory", "ropensci")
 ```
+## To generate a PDF report
+4. Edit [`report.Rnw`](https://github.#' df <- github_report("d4npn7")
+#' # To visualize this, then use
+#' github_plot(df)
+```
 
-4. Edit [`report.Rnw`](https://github.com/ropensci/ImpactReport/blob/master/report.Rnw) and add your ImpactStory collection ID. 
+/ropensci/ImpactReport/blob/master/report.Rnw) and add your ImpactStory collection ID. 
 5. knit the document:
 
 ```r
 knitr::knit('report.Rnw')
 system('pdflatex report.tex')
 ```
+## To generate a visualization in R
 
+```r
+library(rImpactStory)
+df <- github_report("d4npn7")
+# To visualize this, then use
+github_plot(df)
+```
 
+---
 to generate this [pdf](https://github.com/ropensci/ImpactReport/blob/master/report.pdf?raw=true).
 
 # The Report
