@@ -1,7 +1,9 @@
 
-# ImpactStory report for rOpenSci
+# Generating static ImpactStory reports
 
-Code + template to generate an ImpactStory summary for your GitHub repositories. 
+ImpactStory can capture all of the discussion and influence of the code you deposit on GitHub. They have a great website where you can see all the metrics. But have you wanted to embed this information on a compact way in your CV or promotion/tenure report? Try this template. Simply edit the `.Rnw` file, and add in your collection ID. Otherwise use functions `github_report` and `github_plot` to generate figures and embed it other ways. 
+
+**Note:** If you've never used rImpactStory before, you'll need an API key. Get one by emailing [team@impactstory.org](mailto:team@impactstory.org)
 
 1. Visit [ImpactStory.org](http://impactstory.org) and create a report by adding your GitHub username or GitHub organization's username. 
 2. Copy the report ID at the end of the URL
