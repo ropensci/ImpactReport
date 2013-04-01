@@ -11,7 +11,8 @@ Code + template to generate an ImpactStory summary for your GitHub repositories.
 # The Report
 ![A sample ImpactStory report](impactreport.png)
 
-Here's an impact report for some of the more complete rOpenSci packages. It's easy to see that not many are being bookmarked on Delicious (not surprising). It's also cool to see packages that have wider appeal (like GBIF, figshare, and Mendeley) are showing up consistently across different metrics.
+
+Here's an impact report for some of the more complete rOpenSci packages. Orange bars indicate significant activity for a given metric. Bars are only significant when a metric is above the 75th percentile and exceeds a minimum frequency. Orange bars indicate that the repository was **highly discussed** (for tweets), **highly cited** (for forks), and/or **highly recommended** (for stars). It's easy to see that not many are being bookmarked on Delicious (not surprising). It's also cool to see packages that have wider appeal (like GBIF, figshare, and Mendeley) are showing up consistently across different metrics.
 
 ## Contributions
 Please feel free to fork and submit other templates. Please file bugs [here](https://github.com/ropensci/ImpactReport/issues/new).
