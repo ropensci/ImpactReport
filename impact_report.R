@@ -1,12 +1,13 @@
-# First create your collection via the website. Provide your GitHub username.
-# Then copy your ImpactStory report ID and paste it below.
+# First create your collection via the website. Provide your
+# GitHub username.  Then copy your ImpactStory report ID and
+# paste it below.
 impact_report_id <- "d4npn7"
-
-# Unfortunately RCurl and RJSONIO have startup messages that can clutter a document
+# Unfortunately RCurl and RJSONIO have startup messages that
+# can clutter a document
 suppressPackageStartupMessages(suppressWarnings(library(rImpactStory)))
-
+suppressPackageStartupMessages(library(plyr))
 # If your impactstory key is not stored in your .rprofile, add it below with key =
-# metrics <- collection_metrics(collection_id = "d4npn7", key = "YOUR_KEY")
+# metrics <- collection_metrics(collection_id = impact_report_id, key = 'YOUR_KEY')
 metrics <- collection_metrics(collection_id = impact_report_id)
 created_on <- str_sub(metrics[[4]], 1, 10)
 title <- metrics[[9]]
@@ -39,7 +40,6 @@ tabular_data <- llply(data, function(x) {
     return(list(results, stars = stars_data, tweets = tweet_data,
         bookmarks = bookmarks_data, forks = fork_data))
 })
-
 github_data <- function(foo) {
     data <- ldply(foo[2:length(foo)])
     names(data)[1] <- "metric"
@@ -50,11 +50,8 @@ github_data <- function(foo) {
     data$year <- info[1, ]$year
     return(data)
 }
-
-
 simpleCap <- function(x) {
-  foo  <- paste(toupper(substring(x, 1,1)), substring(x, 2, nchar(x)),
-      sep="", collapse=" ")
-  return(foo)
+    foo <- paste(toupper(substring(x, 1, 1)), substring(x, 2, nchar(x)),
+        sep = "", collapse = " ")
+    return(foo)
 }
-
