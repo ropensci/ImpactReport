@@ -39,11 +39,14 @@ df$metric <- sapply(df$metric, simpleCap)
         panel.grid.minor = element_blank(), panel.border = element_blank(),
         axis.line = element_line(colour = "black"), strip.background = element_rect(fill = NA, color = NA))
 
+
 ggplot(df, aes(title, count, fill = metric)) +
-geom_bar(stat = "identity", aes(fill = outline_color), show_guide = FALSE, color = "#5d5d5d") +
-facet_wrap( ~ metric, nrow = 1) + coord_flip() +
-scale_fill_manual(values = c("#8cc63e", "#835f85")) + xlab("") + ylab("Raw Counts")
+geom_bar(stat = "identity",
+    aes(fill = outline_color), show_guide = FALSE, color = "#5d5d5d") +
+    facet_wrap(~metric, nrow = 1) + coord_flip() +
+    scale_fill_manual(values = c("#ee701e",
+    "#528dc6")) + xlab("") + ylab("Raw Counts")
 @
 
-Green bars indicate significant activity for a given metric. This badge is added only when a metric is above the 75th percentile and exceed a minimum frequency. These include highly discussed (for tweets), highly cited (for forks), and highly recommended (for stars).  This ImpactStory report was generated using \href{http://ropensci.org}{rOpenSci's} \href{http://ropensci.github.com/rImpactStory/}{rImpactStory package}. The R script and template necessary to reproduce this PDF are available \href{https://github.com/ropensci/ImpactReport}{here}. A more detailed report can be viewed at \url{http://impactstory.org/collection/d4npn7}.
+Orange bars indicate significant activity for a given metric. This badge is added only when a metric is above the 75th percentile and exceed a minimum frequency. These include highly discussed (for tweets), highly cited (for forks), and highly recommended (for stars).  This ImpactStory report was generated using \href{http://ropensci.org}{rOpenSci's} \href{http://ropensci.github.com/rImpactStory/}{rImpactStory package}. The R script and template necessary to reproduce this PDF are available \href{https://github.com/ropensci/ImpactReport}{here}. A more detailed report can be viewed at \url{http://impactstory.org/collection/d4npn7}.
 \end{document}
