@@ -12,15 +12,8 @@ library(devtools)
 install_github("rImpactStory", "ropensci")
 ```
 ## To generate a PDF report
-Edit [`report.Rnw`](https://github.com/ropensci/ImpactReport/blob/master/report.Rnw)
+Edit [`report.Rnw`](https://github.com/ropensci/ImpactReport/blob/master/report.Rnw) and add your impact ID.
 
-```r
-df <- github_report("d4npn7")
-#' # To visualize this, then use
-#' github_plot(df)
-```
-
-/ropensci/ImpactReport/blob/master/report.Rnw) and add your ImpactStory collection ID. 
 5. knit the document:
 
 ```r
