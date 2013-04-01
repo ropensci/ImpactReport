@@ -16,7 +16,7 @@ install_github("rImpactStory", "ropensci")
 ## To generate a PDF report
 Edit [`report.Rnw`](https://github.com/ropensci/ImpactReport/blob/master/report.Rnw) and add your impact ID.
 
-5. knit the document:
+knit the document:
 
 ```r
 knitr::knit('report.Rnw')
