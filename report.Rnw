@@ -31,7 +31,6 @@ df <- ldply(tabular_data, github_data)
 df$outline_color <- "0"
 df[df$count>3 && df$estimate_lower>75, ]$outline_color <- "1"
 df[df$count<3 | df$estimate_lower<75, ]$outline_color <- "2"
-df$metric <- sapply(df$metric, simpleCap)
 # Because nothing seems to be bookmarked on Delicious these days,
 # we can also drop that metric like so:
 # df2 <- df[which(df$metric =! "Bookmarks"),]
