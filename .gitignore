@@ -3,3 +3,8 @@
 *.log
 *.out
 .textpad
+impact_report_temp.R
+report.pdf
+report.tex
+temp.R
+test.R
